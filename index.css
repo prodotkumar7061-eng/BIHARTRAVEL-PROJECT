@@ -1,0 +1,561 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #1e5631; /* Dark Green Background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.logo {
+    color:red; /* White Color */
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Nav Links Container */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+/* Individual Link Styling */
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #ffffff; /* White Text */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease; /* Hover smooth karne ke liye */
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #ffcc00; /* Yellow Color on Hover */
+}
+
+/* Responsive Styles (For Mobile Screens) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links li {
+        margin-left: 0;
+    }
+}
+
+.hero-section {
+    width: 100%;
+    height: calc(100vh - 70px); /* Poori screen cover karega navbar ko chhod kar */
+    
+    /* Yahan linear-gradient se image thodi dark hogi jisse button pop-out hoga. 
+       Aap 'url(...)' ke andar apni pasand ki image ka link dal sakte hain */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                     url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+    
+    background-size: cover;       /* Image poore area mein fit ho jayegi */
+    background-position: center;  /* Image center mein rahegi */
+    background-repeat: no-repeat;
+    
+    /* Flexbox ka use karke button ko bilkul center mein laya gaya hai */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Explore More Button Styling */
+.explore-btn {
+    background-color: #ffffff; /* Default White Background */
+    color: #1e5631;            /* Inside text Green */
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px;       /* Round corners */
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sundar shadow effect */
+    transition: all 0.3s ease; /* Hover smooth karne ke liye */
+}
+
+/* Button Hover Effect */
+.explore-btn:hover {
+    background-color: #ffcc00; /* Hover karne par Yellow background */
+    color: #1e5631;            /* Text green hi rahega */
+    transform: translateY(-3px); /* Halka sa upar uthega button */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Shadow thodi gehri ho jayegi */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .nav-links li {
+        margin-left: 0;
+    }
+    .hero-section {
+        height: 60vh; /* Mobile par image ki height thodi kam ho jayegi */
+    }
+    .explore-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   NEW: Nalanda Section ki Styling
+   ========================================== */
+
+.nalanda-section {
+    padding: 60px 40px;
+    background-color: #fafafa; /* Halka sa off-white background taaki hero section se alag dikhe */
+}
+
+/* Heading Styling */
+.section-heading {
+    text-align: center;
+    font-size: 32px;
+    color: #1e5631; /* Green Theme Color */
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Heading ke niche choti si Yellow line decor ke liye */
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffcc00; /* Yellow Theme Color */
+    margin: 10px auto 0;
+}
+
+/* Main Flex Container */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Image aur text ko vertically center align karne ke liye */
+    gap: 50px; /* Image aur Text ke beech ka gap */
+}
+
+/* Left Side Image Style */
+.nalanda-image {
+    flex: 1; /* Poore space ka 50% hissa lega */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sundar shadow effect */
+}
+
+.nalanda-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease; /* Hover effect smooth karne ke liye */
+}
+
+/* Image par hover karne par halka sa zoom effect */
+.nalanda-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Right Side Information Style */
+.nalanda-info {
+    flex: 1; /* Bacha hua 50% hissa lega */
+}
+
+.nalanda-info h3 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nalanda-info p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.7; /* Lines ke beech mein aacha space */
+    margin-bottom: 15px;
+    text-align: justify; /* Text dono sides se barabar dikhega */
+}
+
+/* Responsive Styles (For Mobile Screens) */
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column; /* Mobile par image upar aur text niche ho jayega */
+        gap: 30px;
+    }
+    
+    .nalanda-section {
+        padding: 40px 20px;
+    }
+    
+    .section-heading {
+        font-size: 26px;
+    }
+    
+    .nalanda-info h3 {
+        font-size: 20px;
+    }
+}
+
+/* ==========================================
+   NEW: Bodhgaya Section ki Styling
+   ========================================== */
+
+.bodhgaya-section {
+    padding: 60px 40px;
+    background-color: #ffffff; /* Alternating effect ke liye iska background pure white rakha hai */
+}
+
+/* Bodhgaya Container ke liye Flex Direction ko Reverse kiya hai */
+.bodhgaya-container {
+    flex-direction: row-reverse; /* Isse Image Right aur Info Left mein ho jayegi */
+}
+
+/* Right Side Image Style */
+.bodhgaya-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bodhgaya-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Buddha image par hover zoom effect */
+.bodhgaya-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Left Side Information Style */
+.bodhgaya-info {
+    flex: 1;
+}
+
+.bodhgaya-info h3 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.bodhgaya-info p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Responsive Styles (Mobile Screens ke liye adjust) */
+@media (max-width: 768px) {
+    .bodhgaya-container {
+        flex-direction: column; /* Mobile par wapas normal column ho jayega (Image upar, text niche) */
+        gap: 30px;
+    }
+    
+    .bodhgaya-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ==========================================
+   NEW: Rajgir Section ki Styling
+   ========================================== */
+
+.rajgir-section {
+    padding: 60px 40px;
+    background-color: #fafafa; /* Pattern match karne ke liye off-white background */
+}
+
+/* Left Side Image Style */
+.rajgir-image {
+    flex: 1; /* Space ka 50% hissa */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rajgir-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Glass bridge image par hover zoom effect */
+.rajgir-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Right Side Information Style */
+.rajgir-info {
+    flex: 1; /* Bacha hua 50% hissa */
+}
+
+.rajgir-info h3 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.rajgir-info p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Responsive Styles (Mobile Screens) */
+@media (max-width: 768px) {
+    /* Kyonki humne `.section-container` class ko Nalanda wale section mein pehle se hi mobile par column 
+       banaya hua hai, isliye yahan sirf padding aur gap adjust karne ki zaroorat hai */
+    .rajgir-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ==========================================
+   NEW: Our Destination Section ki Styling
+   ========================================== */
+
+.destination-section {
+    padding: 60px 40px;
+    background-color: #ffffff; /* Alternating effect ke liye white background */
+}
+
+/* 3-Column Grid Layout */
+.destination-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop par 3 barabar columns */
+    gap: 30px; /* Cards ke beech ka gap */
+}
+
+/* Individual Card Design */
+.destination-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Halka shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eeeeee;
+}
+
+/* Card par hover karne par animation */
+.destination-card:hover {
+    transform: translateY(-10px); /* Card halka sa upar uthega */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Shadow gehri ho jayegi */
+}
+
+/* Card Image Area */
+.card-image {
+    width: 100%;
+    height: 220px; /* Sabhi images ki height ek barabar karne ke liye */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image bina stretch hue perfectly crop ho jayegi */
+    transition: transform 0.4s ease;
+}
+
+.destination-card:hover .card-image img {
+    transform: scale(1.1); /* Hover karne par image zoom hogi */
+}
+
+/* Card Text Content Area */
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    color: #1e5631; /* Green Theme Color */
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Card ke andar ka link text */
+.read-more {
+    color: #1e5631;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Link Text par hover karne par Yellow Color */
+.read-more:hover {
+    color: #ffcc00; /* Yellow Theme Color */
+}
+
+/* Responsive Styles (For Mobile and Tablets) */
+@media (max-width: 992px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet par 2 columns dikhenge */
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-grid {
+        grid-template-columns: 1fr; /* Mobile par 1 single column ho jayega (ek ke niche ek) */
+    }
+    
+    .destination-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ==========================================
+   NEW: Footer Section ki Styling
+   ========================================== */
+
+.footer {
+    background-color: #1e5631; /* Dark Green Theme Background */
+    color: #ffffff;            /* White Text */
+    padding: 60px 40px 20px 40px;
+    margin-top: 20px;
+}
+
+/* Footer Grid Container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Choti screen par column automatically neeche shift ho jayenge */
+    gap: 40px;
+}
+
+/* Individual Column Styling */
+.footer-col {
+    flex: 1;
+    min-width: 250px; /* Taaki mobile par columns bikhrein nahi */
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Footer Heading ke niche ek Choti si Yellow Underline decoration */
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 3px;
+    background-color: #ffcc00; /* Yellow Color */
+    margin-top: 8px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e0e0e0; /* Halka off-white text read karne mein aasan hota hai */
+}
+
+/* Footer Links List */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease; /* Hover smooth karne ke liye */
+    display: inline-block;
+}
+
+/* Footer Links Hover Effect */
+.footer-col ul li a:hover {
+    color: #ffcc00;       /* Hover karne par text Yellow ho jayega */
+    transform: translateX(5px); /* Link halka sa right side slide hoga */
+}
+
+/* Footer Bottom Section (Copyright Line) */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ek patli white transparency wali line divider */
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+/* Responsive Footer (For Mobile) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px 20px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column; /* Mobile par saare columns ek ke niche ek ho jayenge */
+        gap: 30px;
+    }
+    
+    .footer-col {
+        min-width: 100%;
+    }
+}
